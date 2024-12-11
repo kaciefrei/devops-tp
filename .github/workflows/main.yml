@@ -1,3 +1,14 @@
+name: CI devops 2024
+on:
+  push:
+    branches:
+      - main
+      - dev
+  pull_request:
+    branches:
+      - main
+      - dev
+
 jobs:
   test-backend:
     runs-on: ubuntu-22.04
@@ -10,3 +21,5 @@ jobs:
           distribution: 'temurin'
       - name: Build and test with Maven
         run: mvn clean verify
+
+
