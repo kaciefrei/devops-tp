@@ -1,0 +1,12 @@
+- name: Run Database
+  docker_container:
+    name: my-db
+    image: "kacibouaouli/tp-devops-database:latest"
+    state: started
+    networks:
+      - name: my_app_network
+    volumes:
+      - /data/db:/var/lib/postgresql/data
+  vars:
+    ansible_python_interpreter: /opt/docker_venv/bin/python
+    
